@@ -68,15 +68,15 @@ Given sorted array: `[2, 5, 8, 12, 16, 23, 38, 45, 67, 90]`, target = `23`
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B[Set left = 0\nSet right = n - 1]
+    A([Start]) --> B["Set left = 0, right = n - 1"]
     B --> C{left <= right?}
-    C -- No --> D([Return -1\nElement Not Found])
+    C -- No --> D([Return -1: Not Found])
     C -- Yes --> E["mid = left + (right - left) / 2"]
-    E --> F{arr\[mid\] == target?}
-    F -- Yes --> G([Return mid\nElement Found at index mid])
-    F -- No --> H{arr\[mid\] < target?}
-    H -- Yes --> I["left = mid + 1\n(Search Right Half)"]
-    H -- No --> J["right = mid - 1\n(Search Left Half)"]
+    E --> F{"arr[mid] == target?"}
+    F -- Yes --> G([Return mid: Element Found])
+    F -- No --> H{"arr[mid] < target?"}
+    H -- Yes --> I["left = mid + 1 — Search Right Half"]
+    H -- No --> J["right = mid - 1 — Search Left Half"]
     I --> C
     J --> C
 ```
